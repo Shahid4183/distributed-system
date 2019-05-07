@@ -47,14 +47,17 @@ This function will create MAXNODES number of nodes, starts them on port range st
 Create(wg *sync.WaitGroup) Cluster
 ```
 > for example
+
 > MAXNODE = 5
+
 > PORT = 300
+
 > cluster.Create(wg *sync.WaitGroup) will create 5 nodes on localhost using port 3001,3002,.....3005
 
 GetMaster - randomely picks a master node from the cluster
 Then stores reference of all other nodes in cluster as slave nodes in its Slave property
 ```
-func (c Cluster) GetMaster() (*nodes.Node, error)
+(c Cluster) GetMaster() (*nodes.Node, error)
 ```
 
 
@@ -98,7 +101,7 @@ Any blocked Accept operations will be unblocked and return errors.
 ```
 Addr - returns the listener's network address
 ```
-func (n Node) Addr() net.Addr
+(n Node) Addr() net.Addr
 ```
 listenOnPort - this method of type node will start listning on port of node n as soon as the node is created, in a different goroutine it will signal if it does its work via the work group reference variable to main process
 ```
